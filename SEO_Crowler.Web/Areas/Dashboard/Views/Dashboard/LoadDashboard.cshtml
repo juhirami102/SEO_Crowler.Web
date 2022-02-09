@@ -1,0 +1,48 @@
+﻿@using SEO_Crowler.Web.Helper;
+@model SEO_Crowler.Web.Areas.Dashboard.ViewModel.SearchViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+        Layout = "~/Shared/_LayoutCommon.cshtml";
+    }
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+
+                <div class="row">
+                   
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                          
+                            <div class="container-fluid mt--6">
+                                <div class="row">
+                                    <form id="SearchForm" asp-action="SearchResultByPhrase" method="get" role="form" class="user">
+                                        <partial name="_SearchCriteriaPartial" model="Model" />
+                                    </form>
+                                    <div id="SearchResultDiv" class="card-body">
+                                        @if (Model.IsSearchPerformed())
+                                        {
+                                            <label>Total Count : @Model.TotalRecordCount</label>
+                                            <partial name="_SearchResultsPartial" model="Model" />
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+

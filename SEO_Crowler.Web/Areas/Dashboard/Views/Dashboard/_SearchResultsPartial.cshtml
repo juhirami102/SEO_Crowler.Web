@@ -1,0 +1,27 @@
+﻿@model SEO_Crowler.Web.Areas.Dashboard.ViewModel.SearchResultsViewModel
+
+
+<div >
+    <div style="width:90%; margin:0 auto;">
+        <div class="table-responsive">
+            <table id="SearchResult" class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th> Title </th>
+                        <th> Link</th>
+                    </tr>
+               
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SearchResults)
+                    {
+                    <tr>
+                        <td>@item.Description</td>
+                        <td>@item.link</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+           </div>
+        </div>
+    </div>
